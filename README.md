@@ -1,1 +1,2 @@
-# personal_website
+# kieranhitchcock.com
+Code for website

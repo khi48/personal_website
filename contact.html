@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Kieran Hitchcock</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <div id="header-wrapper">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="/projects/">Projects</a>
+            <a href="#" id="current-page">Contact</a>
+        </div>
+    </header>
+       
+    <main>
+        <div id="contact-blurb">
+            <p>Contact me with the form below, or through one of the links.</p>
+        </div>
+        <br>
+        <br>
+
+        <div class="contact-form-wrapper">
+            <!-- https://www.templatemonster.com/help/how-create-contact-form-html.html -->
+            <form action="contact.php" method="post">
+                <div class="contact-form-row">
+                    Name:<br>
+                    <input type="text" name="cf_name" class="text-input"><br>
+                </div>
+                <div class="contact-form-row">
+                    Email Address:<br>
+                    <input type="text" name="cf_email" class="text-input"><br>
+                </div>
+                <div class="contact-form-row">
+                    Message:<br>
+                    <textarea name="cf_message" class="text-input"></textarea><br>
+                </div>
+                <div class="contact-form-row">  
+                    <input type="submit" value="Submit" class="btn-input">
+                </div>
+                <!-- <input type="reset" value="Clear"> -->
+            </form>
+        </div>
+
+        <!-- kieran.hitchcock@rocketmail.com -->
+
+        <br>
+        <br>
+
+
+        <div class="flex-center-wrap">
+            <div class="contact-link-wrapper">
+                <a href="https://www.linkedin.com/in/kieran-hitchcock" target="_blank">
+                    <div class="flex-center">
+                        <img src="assets/LinkedIn-Icon.png" class="contact-icon">
+                        <p class="contact-link-text">https://www.linkedin.com/in/kieran-hitchcock</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-link-wrapper">
+                <a href="https://github.com/khi48" target="_blank">
+                    <div class="flex-center">
+                        <img src="assets/Github-Icon.png" class="contact-icon">
+                        <p class="contact-link-text">https://github.com/khi48</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-link-wrapper">
+                <a href="mailto:contact@kieranhitchcock.com" target="_blank">
+                    <div class="flex-center">
+                        <img src="assets/Email-Icon.png" class="contact-icon">
+                        <p class="contact-link-text">contact@kieranhitchcock.com</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div id="header-wrapper">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="/projects/">Projects</a>
+            <a href="#" id="current-page">Contact</a>
+        </div>
+    </footer>
+
+</body>

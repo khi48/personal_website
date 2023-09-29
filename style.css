@@ -1,0 +1,613 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------------------------- My Code --------------------------------*/
+
+/* -------------------------------- General --------------------------------*/
+
+.center{
+    margin: auto;
+    text-align: center;
+}
+
+.flex-center-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+/* -------------------------------- General --------------------------------*/
+
+
+/* -------------------------------- Index --------------------------------*/
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+#title { 
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    grid-area: title;
+}
+
+#title span {
+    font-size: 9vw;
+    font-family: Sans-Serif;
+}
+
+#blurb {
+    background-color: lightgray;
+    font-size: 2.5vw;
+    text-align: center;
+    grid-area: blurb;
+    justify-self: center;
+    align-self: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#index-wrapper a {
+    text-decoration: None;
+    color: black;
+    text-align: center;
+    width: 230px;
+    height: 85px;
+    line-height: 85px;
+    font-size: 32px;
+    justify-self: center;
+    align-self: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#index-wrapper a:hover {
+    color: seashell;
+}
+
+#resume-link{
+    grid-area: resume-link;
+    background-color: #FAEFD0;
+}
+
+
+#project-link{
+    background-color: #B9E3B1;
+    grid-area: project-link;
+}
+
+#contact-link{
+    background-color: #C2EDFF;
+    grid-area: contact-link;
+}
+
+#index-wrapper{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 12.5% 25% auto 25% 12.5%;
+    grid-template-rows: 20vh 20vh 20vh 20vh auto;
+    grid-template-areas: 
+        ". . . . ."
+        ". title title title ."
+        ". blurb blurb blurb ."
+        ". resume-link project-link contact-link .";
+}
+
+@media screen and (max-width: 1400px) {
+    #index-wrapper a {
+        width: 200px;
+        height: 75px;
+        line-height: 75px;
+        font-size: 28px;
+    } 
+}
+
+@media screen and (max-width: 1100px) {
+    #index-wrapper a {
+        width: 170px;
+        height: 60px;
+        line-height: 60px;
+    } 
+}
+
+@media screen and (max-width: 900px) {
+    #blurb {
+        font-size: 25px;
+    }
+
+    #index-wrapper span {
+        font-size: 80px;
+    }
+
+    #index-wrapper a {
+        width: 160px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 25px;
+    }
+
+    
+}
+
+@media screen and (max-width: 700px) {
+
+    #index-wrapper span {
+        font-size: 70px;
+    }
+
+    #index-wrapper{
+
+        grid-template-columns: 5% 5% auto 5% 5%;
+        grid-template-rows: 1vh 25vh 40vh 10vh 10vh 10vh auto;
+        grid-template-areas: 
+            " . . . . ."
+            ". title title title ."
+             ". blurb blurb blurb ."
+             ". . resume-link . ."
+             ". . project-link . ."
+             ". . contact-link . .";
+    }
+
+    #index-wrapper a {
+        width: 155px;
+        height: 55px;
+        line-height: 55px;
+        font-size: 25px;
+    }
+
+}
+
+
+@media screen and (max-width: 650px) {
+    #index-wrapper{
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: 10vh 20vh 28vh 12vh 12vh 12vh auto;
+        grid-template-areas: 
+            ". . ."
+            ". title ."
+             ". blurb ."
+             ". resume-link ."
+             ". project-link ."
+             ". contact-link .";
+    }
+
+}
+
+@media screen and (max-width: 330px) {
+
+    #index-wrapper span {
+        font-size: 60px;
+    }
+
+    #blurb{
+        font-size: 20px;
+    }
+
+    #index-wrapper a {
+        font-size: 20px;
+    } 
+}
+/* -------------------------------- Index --------------------------------*/
+
+
+/* -------------------------------- Header --------------------------------*/
+#header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 65%;
+    /* padding: 2%; */
+    background-color: white;
+    /* background-image: linear-gradient(lightgray, white); */
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    padding: 2% 2% 1%;
+    /* margin-bottom: 45px; */
+
+    /* border: 3px solid #333; */
+    border-bottom: 3px solid #aaa;
+    border-top: none;
+}
+
+
+footer #header-wrapper {
+    /* background-image: linear-gradient(white, #C2EDFF); */
+    
+    margin-top: 5%;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+    border-bottom: none;
+    border-top: 3px solid #aaa;
+}
+
+:root {
+    --mainColor: #ff9800;
+}
+
+#header-wrapper a {
+    text-decoration: none;
+    font-size: 32px;
+    line-height: 30px;
+    color: black;
+    margin: 0px 5%;
+    /* margin: auto;   */
+
+    
+    /* background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%); */
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 3px;
+    color: #000;
+    text-decoration: none;
+    padding-bottom: .25em;
+}
+
+#header-wrapper a:hover {
+    transform: scale(1.2);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .5s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E") !important;
+    background-position: 0 100%;
+    background-size: auto 6px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+}
+
+#current-page {
+    /* font-size: 25px !important; */
+    color: lightgray !important;
+}
+
+@media screen and (max-width: 500px) {
+
+    #header-wrapper {
+        width: 75%;
+    }
+    #header-wrapper a {
+        font-size: 28px;
+    }
+}
+
+/* -------------------------------- Header --------------------------------*/
+
+
+/* -------------------------------- Project --------------------------------*/
+.project-wrapper {
+	display: grid;
+    /* overflow: hidden; */
+    /* justify-content: flex-start; */
+
+    width: 60%;
+    margin: auto;
+    /* padding: 2px; */
+    border: 3px solid #333;
+
+    box-shadow: 0px 0px 10px #EEE;
+
+    /* height: 100%; */
+    grid-template-columns: 60% auto;
+    /* grid-template-rows: 20% 80% auto;*/
+    /* grid-auto-rows: minmax(0px, auto);  */
+    grid-template-areas: 
+        "link projectTitle"
+        "link description"
+        "link tag";
+    /* gap: 10px; */
+    /* align-content: space-between; */
+
+
+    
+
+	/* flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch; */
+}
+
+.project-wrapper .display-image {
+    /* grid-area: image; */
+    margin: 2%;
+    max-width: 96%; /* Have to get this right ... */
+}
+
+.project-wrapper .display-image:hover {
+    transform: scale(1.02);
+}
+
+.project-wrapper .project-link {
+    grid-area: link;
+    /* max-width: 100%; 
+    height: auto; */
+}
+
+
+#project-list li {
+    margin-bottom: 20px;
+}
+
+.project-wrapper .project-title {
+    /* order: 1; */
+    grid-area: projectTitle;
+
+    font-size: 35px;
+    /* font-size: 300px; */
+    color: darkorange;
+    margin: 2%;
+    margin-bottom: 0%;
+    height: auto;
+
+}
+
+.project-wrapper .project-description {
+    /* order: 2; */
+
+    /* flex-grow: 1; */
+    grid-area: description;
+    align-self: start;
+    /* justify-self: start; */
+    margin: 2%;
+
+    
+    /* margin-top: 0%; */
+    /* height: auto; */
+    
+    /* margin-bottom: 0%;  */
+    /* height: 100%; */
+	/* border: none; 
+	margin: 0; 
+	padding: 0; */
+	/* width: 100%; */
+	/* height: 40px; */
+}
+
+.project-wrapper .project-tags {
+    /* order: 3; */
+    grid-area: tag;
+    /* justify-self: end; */
+    align-self: end;
+    margin: 2%;
+    margin-bottom: 3.5%;
+    color: gray;
+    /* margin-top: 5%; */
+    /* grid-row: ; */
+}
+
+.project-wrapper .project-text {
+    font-size: 19px;
+
+}
+
+/* @media screen and (max-width: 1000px) {
+
+    .project-wrapper {
+        width: 600px;
+    }
+} */
+
+@media screen and (max-width: 650px) {
+
+    .project-wrapper {
+        /* width: 400px; */
+
+        border: 2px solid #333;
+
+        box-shadow: 0px 0px 10px #EEE;
+
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 20% 80% auto;*/
+        grid-auto-rows: minmax(0px, auto);
+
+        grid-template-areas: 
+            "projectTitle projectTitle"
+            "link link"
+            /* " . ." */
+            "description description"
+            "tag tag";
+    }
+}
+
+/* @media screen and (max-width: 500px) {
+
+    .project-wrapper {
+        width: 300px;
+    }
+} */
+/* -------------------------------- Project --------------------------------*/
+
+
+/* -------------------------------- Resume --------------------------------*/
+#resume-wrapper {
+    width: 65%;
+    margin: auto;
+}
+
+#resume-wrapper img {
+    margin: auto;
+    max-width:100%;
+    height: auto;
+    margin-bottom: 5%;
+}
+
+#resume-download-text{
+    /* margin: auto; */
+    font-size: 25px;
+    text-decoration: None;
+    border: none;
+
+    display: inline-block; 
+}
+
+#resume-download-text:hover {
+    transform: scale(1.05);
+}
+/* -------------------------------- Resume --------------------------------*/
+
+
+
+/* -------------------------------- Contact --------------------------------*/
+
+#contact-blurb{
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.contact-form-wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    width: 30%;
+    margin: auto;
+}
+
+.contact-form-row{
+    margin: 5%;
+    width: 85%;
+    height: auto;
+}
+
+.contact-form-wrapper form {
+    width: 100%;
+    height: auto;
+    min-width: 300px;
+
+
+}
+
+.contact-form-wrapper .text-input {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    /* line-height: 25px; */
+    padding: 10px 10px;
+    border-radius:0.5em;
+    border: 2px solid #333;
+    background-color: #EEEEEE;
+}
+
+.contact-form-wrapper textarea {
+    width: 100%;
+    min-height: 100px;
+
+}
+
+
+.contact-form-wrapper .btn-input {
+    width: 30%;
+    height: auto;
+    text-align: center !important;
+    margin: auto !important;
+
+    text-decoration: none;
+    border: none;
+
+     
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    transition: background-color 0.3s;
+    /* transition: color 0.2s; */
+
+
+    border: 2px solid black;
+    border-radius: 5px;
+    
+
+    cursor: pointer;
+}
+
+.contact-form-wrapper .btn-input:hover {
+    color: white;
+    background-color: black;
+   
+}
+
+
+.contact-link-wrapper a {
+    text-decoration: none;
+    color: black;
+}
+
+.contact-link-wrapper {
+    margin: 2%;
+}
+
+.contact-link-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.contact-icon {
+    height: 40px;
+    width: auto;
+    margin-right: 4%;
+    vertical-align: middle;
+}
+
+.contact-link-text{
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+/* -------------------------------- Contact --------------------------------*/
