@@ -51,9 +51,26 @@ table {
 
 /* -------------------------------- General --------------------------------*/
 
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .center{
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+}
+
+.bottom-margin {
+    margin-bottom: 10vh;
+}
+
+.spacer {
+    height: 5vh;
 }
 
 .flex-center-wrap{
@@ -71,296 +88,300 @@ table {
     flex-wrap: nowrap;
 }
 
-/* -------------------------------- General --------------------------------*/
-
-
-/* -------------------------------- Index --------------------------------*/
 html {
     height: 100%;
 }
 
 body {
     min-height: 100%;
+    background-color: #EBE7E2;
+    font-family: "Neue Montreal";
+    font-feature-settings: "palt";
+    font-weight: 200;
 }
 
+nav {
+    grid-area: nav;
+    display: grid;
+    padding: 2% 12vw;
+    height: 100%;
+    top: 0; /* Position the navbar at the top of the page */
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    justify-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 2vw;
+}
+
+nav li:hover{
+    transform: scale(1.2);
+    /* text-decoration: underline; */
+}
+
+.noise {
+    position: fixed;
+    z-index: 9999;
+    top: -300%;
+    left: -150%;
+    height: 600%;
+    width: 600%;
+    -webkit-animation: grain 7s steps(10) infinite;
+    animation: grain 7s steps(10) infinite;
+    background-image: url(assets/noise.png);
+    background-size: 500px;
+    background-repeat: repeat;
+    opacity: 0.15;
+    pointer-events:none
+}
+
+@-webkit-keyframes grain {
+    0%, to {
+        transform:translate(0)
+    }
+
+    10% {
+        transform:translate(-5%, -10%)
+    }
+
+    20% {
+        transform:translate(-15%, 5%)
+    }
+
+    30% {
+        transform:translate(7%, -25%)
+    }
+
+    40% {
+        transform:translate(-5%, 25%)
+    }
+
+    50% {
+        transform:translate(-15%, 10%)
+    }
+
+    60% {
+        transform:translate(15%)
+    }
+
+    70% {
+        transform:translateY(15%)
+    }
+
+    80% {
+        transform:translate(3%, 35%)
+    }
+
+    90% {
+        transform:translate(-10%, 10%)
+    }
+}
+
+@keyframes grain {
+    0%, to {
+        transform:translate(0)
+    }
+
+    10% {
+        transform:translate(-5%, -10%)
+    }
+
+    20% {
+        transform:translate(-15%, 5%)
+    }
+
+    30% {
+        transform:translate(7%, -25%)
+    }
+
+    40% {
+        transform:translate(-5%, 25%)
+    }
+
+    50% {
+        transform:translate(-15%, 10%)
+    }
+
+    60% {
+        transform:translate(15%)
+    }
+
+    70% {
+        transform:translateY(15%)
+    }
+
+    80% {
+        transform:translate(3%, 35%)
+    }
+
+    90% {
+        transform:translate(-10%, 10%)
+    }
+}
+
+
+/* -------------------------------- Index --------------------------------*/
 #title { 
+    grid-area: title;
     justify-self: center;
     align-self: center;
     text-align: center;
-    grid-area: title;
 }
 
 #title span {
     font-size: 9vw;
-    font-family: Sans-Serif;
+    /* font-family: "Neue Montreal";
+    font-feature-settings: "palt"; */
+    font-weight: 200;
+    /* font-family: Sans-Serif; */
 }
 
 #blurb {
+    grid-area: blurb;
     background-color: lightgray;
     font-size: 2.5vw;
     text-align: center;
-    grid-area: blurb;
     justify-self: center;
     align-self: center;
     font-family: 'Courier New', Courier, monospace;
 }
 
-#index-wrapper a {
-    text-decoration: None;
-    color: black;
-    text-align: center;
-    width: 230px;
-    height: 85px;
-    line-height: 85px;
-    font-size: 32px;
-    justify-self: center;
-    align-self: center;
-    font-family: 'Courier New', Courier, monospace;
+#index-wrapper #icons {
+    grid-area: icons;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#index-wrapper a:hover {
-    color: seashell;
+#icons ul {
+    display: flex;
+    gap: 9vh
 }
 
-#resume-link{
-    grid-area: resume-link;
-    background-color: #FAEFD0;
+#icons img {
+    height: 7vh;
+    width: auto
 }
 
-
-#project-link{
-    background-color: #B9E3B1;
-    grid-area: project-link;
-}
-
-#contact-link{
-    background-color: #C2EDFF;
-    grid-area: contact-link;
+#icons img:hover {
+    transform: scale(1.2);
 }
 
 #index-wrapper{
     display: grid;
     height: 100%;
     grid-template-columns: 12.5% 25% auto 25% 12.5%;
-    grid-template-rows: 20vh 20vh 20vh 20vh auto;
+    grid-template-rows: 17.5vh 20vh 20vh auto;
     grid-template-areas: 
-        ". . . . ."
+        "nav nav nav nav nav"
         ". title title title ."
         ". blurb blurb blurb ."
-        ". resume-link project-link contact-link .";
-}
-
-@media screen and (max-width: 1400px) {
-    #index-wrapper a {
-        width: 200px;
-        height: 75px;
-        line-height: 75px;
-        font-size: 28px;
-    } 
-}
-
-@media screen and (max-width: 1100px) {
-    #index-wrapper a {
-        width: 170px;
-        height: 60px;
-        line-height: 60px;
-    } 
+        ". icons icons icons .";
 }
 
 @media screen and (max-width: 900px) {
-    #blurb {
+
+    #blurb, nav a {
         font-size: 25px;
     }
 
-    #index-wrapper span {
+    #index-wrapper #title {
         font-size: 80px;
     }
-
-    #index-wrapper a {
-        width: 160px;
-        height: 60px;
-        line-height: 60px;
-        font-size: 25px;
-    }
-
-    
 }
 
 @media screen and (max-width: 700px) {
 
-    #index-wrapper span {
+    #index-wrapper #title {
         font-size: 70px;
     }
 
     #index-wrapper{
 
         grid-template-columns: 5% 5% auto 5% 5%;
-        grid-template-rows: 1vh 25vh 40vh 10vh 10vh 10vh auto;
+        grid-template-rows: 17.5vh 20vh 20vh auto;
         grid-template-areas: 
-            " . . . . ."
+            "nav nav nav nav nav"
             ". title title title ."
-             ". blurb blurb blurb ."
-             ". . resume-link . ."
-             ". . project-link . ."
-             ". . contact-link . .";
+            ". blurb blurb blurb ."
+            ". icons icons icons .";
     }
-
-    #index-wrapper a {
-        width: 155px;
-        height: 55px;
-        line-height: 55px;
-        font-size: 25px;
-    }
-
 }
 
 
 @media screen and (max-width: 650px) {
     #index-wrapper{
         grid-template-columns: 5% 90% 5%;
-        grid-template-rows: 10vh 20vh 28vh 12vh 12vh 12vh auto;
+        grid-template-rows: 17.5vh 20vh 20vh auto;
         grid-template-areas: 
-            ". . ."
+            "nav nav nav"
             ". title ."
-             ". blurb ."
-             ". resume-link ."
-             ". project-link ."
-             ". contact-link .";
+            ". blurb ."
+            ". icons .";
     }
 
 }
 
 @media screen and (max-width: 330px) {
 
-    #index-wrapper span {
+    #index-wrapper #title {
         font-size: 60px;
     }
-
-    #blurb{
+    #blurb, nav a {
         font-size: 20px;
     }
-
-    #index-wrapper a {
-        font-size: 20px;
-    } 
 }
 /* -------------------------------- Index --------------------------------*/
 
 
-/* -------------------------------- Header --------------------------------*/
-#header-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 65%;
-    /* padding: 2%; */
-    background-color: white;
-    /* background-image: linear-gradient(lightgray, white); */
-    margin: auto;
-    margin-top: 1%;
-    margin-bottom: 5%;
-    padding: 2% 2% 1%;
-    /* margin-bottom: 45px; */
-
-    /* border: 3px solid #333; */
-    border-bottom: 3px solid #aaa;
-    border-top: none;
-}
-
-
-footer #header-wrapper {
-    /* background-image: linear-gradient(white, #C2EDFF); */
-    
-    margin-top: 5%;
-    margin-bottom: 1%;
-    padding-bottom: 2%;
-    border-bottom: none;
-    border-top: 3px solid #aaa;
-}
-
-:root {
-    --mainColor: #ff9800;
-}
-
-#header-wrapper a {
-    text-decoration: none;
-    font-size: 32px;
-    line-height: 30px;
-    color: black;
-    margin: 0px 5%;
-    /* margin: auto;   */
-
-    
-    /* background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%); */
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 3px 3px;
-    color: #000;
-    text-decoration: none;
-    padding-bottom: .25em;
-}
-
-#header-wrapper a:hover {
-    transform: scale(1.2);
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .5s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E") !important;
-    background-position: 0 100%;
-    background-size: auto 6px;
-    background-repeat: repeat-x;
-    text-decoration: none;
-}
-
-#current-page {
-    /* font-size: 25px !important; */
-    color: lightgray !important;
-}
-
-@media screen and (max-width: 500px) {
-
-    #header-wrapper {
-        width: 75%;
-    }
-    #header-wrapper a {
-        font-size: 28px;
-    }
-}
-
-/* -------------------------------- Header --------------------------------*/
-
-
 /* -------------------------------- Project --------------------------------*/
 .project-wrapper {
-	display: grid;
-    /* overflow: hidden; */
-    /* justify-content: flex-start; */
+
+    display: flex;
+
 
     width: 60%;
-    margin: auto;
-    /* padding: 2px; */
+    /* margin: auto;
     border: 3px solid #333;
 
     box-shadow: 0px 0px 10px #EEE;
 
-    /* height: 100%; */
     grid-template-columns: 60% auto;
-    /* grid-template-rows: 20% 80% auto;*/
-    /* grid-auto-rows: minmax(0px, auto);  */
     grid-template-areas: 
         "link projectTitle"
         "link description"
-        "link tag";
-    /* gap: 10px; */
-    /* align-content: space-between; */
+        "link tag"; */
+}
+
+.project-wrapper img {
+    height: auto;
+    width: 30%;
+}
 
 
-    
+@media screen and (max-width: 650px) {
 
-	/* flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch; */
+    .project-wrapper {
+        display: flex;
+        /* border: 2px solid #333;
+        box-shadow: 0px 0px 10px #EEE;
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(0px, auto);
+
+        grid-template-areas: 
+            "projectTitle projectTitle"
+            "link link"
+            "description description"
+            "tag tag"; */
+    }
+}
+.project-information {
+    display: inline;
 }
 
 .project-wrapper .display-image {
@@ -375,8 +396,6 @@ footer #header-wrapper {
 
 .project-wrapper .project-link {
     grid-area: link;
-    /* max-width: 100%; 
-    height: auto; */
 }
 
 
@@ -385,11 +404,9 @@ footer #header-wrapper {
 }
 
 .project-wrapper .project-title {
-    /* order: 1; */
     grid-area: projectTitle;
 
     font-size: 35px;
-    /* font-size: 300px; */
     color: darkorange;
     margin: 2%;
     margin-bottom: 0%;
@@ -398,25 +415,9 @@ footer #header-wrapper {
 }
 
 .project-wrapper .project-description {
-    /* order: 2; */
-
-    /* flex-grow: 1; */
     grid-area: description;
     align-self: start;
-    /* justify-self: start; */
     margin: 2%;
-
-    
-    /* margin-top: 0%; */
-    /* height: auto; */
-    
-    /* margin-bottom: 0%;  */
-    /* height: 100%; */
-	/* border: none; 
-	margin: 0; 
-	padding: 0; */
-	/* width: 100%; */
-	/* height: 40px; */
 }
 
 .project-wrapper .project-tags {
@@ -443,27 +444,6 @@ footer #header-wrapper {
     }
 } */
 
-@media screen and (max-width: 650px) {
-
-    .project-wrapper {
-        /* width: 400px; */
-
-        border: 2px solid #333;
-
-        box-shadow: 0px 0px 10px #EEE;
-
-        grid-template-columns: 1fr;
-        /* grid-template-rows: 20% 80% auto;*/
-        grid-auto-rows: minmax(0px, auto);
-
-        grid-template-areas: 
-            "projectTitle projectTitle"
-            "link link"
-            /* " . ." */
-            "description description"
-            "tag tag";
-    }
-}
 
 /* @media screen and (max-width: 500px) {
 

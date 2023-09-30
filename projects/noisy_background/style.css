@@ -1,0 +1,161 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------------------------- My Code --------------------------------*/
+
+/* -------------------------------- General --------------------------------*/
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #EBE7E2;
+    /* filter: url(#noiseFilter); */
+}
+
+.noise {
+    position: fixed;
+    z-index: 9999;
+    top: -300%;
+    left: -150%;
+    height: 600%;
+    width: 600%;
+    -webkit-animation: grain 7s steps(10) infinite;
+    animation: grain 7s steps(10) infinite;
+    background-image: url(noise.png);
+    background-size: 200px;
+    background-repeat: repeat;
+    opacity: 0.25;
+    pointer-events:none
+}
+
+@-webkit-keyframes grain {
+    0%, to {
+        transform:translate(0)
+    }
+
+    10% {
+        transform:translate(-5%, -10%)
+    }
+
+    20% {
+        transform:translate(-15%, 5%)
+    }
+
+    30% {
+        transform:translate(7%, -25%)
+    }
+
+    40% {
+        transform:translate(-5%, 25%)
+    }
+
+    50% {
+        transform:translate(-15%, 10%)
+    }
+
+    60% {
+        transform:translate(15%)
+    }
+
+    70% {
+        transform:translateY(15%)
+    }
+
+    80% {
+        transform:translate(3%, 35%)
+    }
+
+    90% {
+        transform:translate(-10%, 10%)
+    }
+}
+
+@keyframes grain {
+    0%, to {
+        transform:translate(0)
+    }
+
+    10% {
+        transform:translate(-5%, -10%)
+    }
+
+    20% {
+        transform:translate(-15%, 5%)
+    }
+
+    30% {
+        transform:translate(7%, -25%)
+    }
+
+    40% {
+        transform:translate(-5%, 25%)
+    }
+
+    50% {
+        transform:translate(-15%, 10%)
+    }
+
+    60% {
+        transform:translate(15%)
+    }
+
+    70% {
+        transform:translateY(15%)
+    }
+
+    80% {
+        transform:translate(3%, 35%)
+    }
+
+    90% {
+        transform:translate(-10%, 10%)
+    }
+}

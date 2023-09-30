@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+    <div class="noise"></div>
+    <template>
+        <li>
+            <a class="project-link" href="">
+                <div class="project-wrapper">
+                        <img class="display-image" alt="display-image" src="">
+                        <div class="project-information">
+                            <h2 class="project-title"></h2>
+                            <p class="project-description project-text"></p>
+                            <p class="project-tags project-text"></p>
+                        </div>
+                </div>
+            </a>
+        </li>
+    </template>
+
+    <header></header>
+      
+    <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a  href="/projects.html">Projects</a></li>
+          <li><a href="/resume.html">Resume</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+    <main>
+        <div class="page-wrapper">
+            <nav>
+                <ul id="project-list">
+
+                </ul>
+            </nav>
+        </div>
+    </main>
+    
+    <footer></footer>
+
+</body>
+
+<script>
+            
+    // checking that the template is viable with the site
+    if ('content' in document.createElement('template')) {
+        let projectArray = ["Slime Mold", "topo", "boids", "worley_noise", "noisey_lines", "Hidden Text", "Jake The Dog", "Money Money Money"];
+        
+        // finding template 
+        let temp = document.getElementsByTagName("template")[0];
+
+        // finding relevant elements inside template to make for each item in projectArray
+        let item = temp.content.querySelector("li");
+        
+
+        for (let i = 0; i < projectArray.length; i++) {
+
+            // creating new element for each item in projectArrray
+            let a = document.importNode(item, true);
+
+            // updating elements to be unique to each item
+            a.querySelector(".project-title").textContent = String(projectArray[i]);
+
+            // pull text file holding description of project
+            let client = new XMLHttpRequest();
+
+            client.onreadystatechange = function() {
+                if (client.readyState === XMLHttpRequest.DONE && client.status == 200) {
+                    a.querySelector(".project-description").innerHTML = client.responseText;
+                } else {
+                    // console.log('failed')
+                    // a.querySelector(".project-description").innerHTML = "File not found";
+                }
+            }
+            client.open('GET', "projects/" + String(projectArray[i] + "/reference/description.txt"));
+            client.send();
+
+            a.querySelector("a").href =  "projects/" + projectArray[i] + "/index.html";
+            a.querySelector("img").src =  "projects/" + projectArray[i] + "/reference/display.png";
+            a.querySelector(".project-tags").textContent += "Desktop"
+            // projectArray[i] + "/reference/description.html";
+
+            // adding child to list to be displayed
+            document.getElementById("project-list").appendChild(a);
+        }
+
+    } else {
+        // Find another way to add the rows to the table because 
+        // the HTML template element is not supported.
+        console.log('template failed')
+    }
+</script>
+    
+
+</html>

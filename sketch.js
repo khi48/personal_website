@@ -1,32 +1,27 @@
 let elements = document.getElementsByClassName('m');
-// console.log(elements)
 let element_speeds = []
 let affectRadius = 100
 
+let screen_height = document.body.clientHeight
+let screen_width = document.body.clientWidth
 let mouse_x = null;
 var mouse_y = null;
 
 document.addEventListener('mousemove', onMouseUpdate);
 
 function onMouseUpdate(e) {
-    // console.log(e)
-    // console.log("onMouseUpdate")
     mouse_x = e.clientX;
     mouse_y = e.clientY;
 }
   
 
-
-
 function setup(){
-    console.log("setup")
     let element_rects = []
 
     for (let i=0; i<elements.length; i++){
         let rect = elements[i].getBoundingClientRect();
         element_rects.push(rect);
         element_speeds.push({x:0, y:0});
-       
     }
     
     for (let i=0; i<elements.length; i++){
@@ -58,17 +53,11 @@ function slowSpeed(speed){
 var intervalID = setInterval(updateElements, 10);
 
 function updateElements(){
-    // console.log("mouse move")
-    // console.log(event)
-    // console.log('working')
     for (let i=0; i<elements.length; i++){ 
 
-        // console.log(elements[i])
         let rect = elements[i].getBoundingClientRect();
         let center_x = rect.left + rect.width/2;
         let center_y = rect.top + rect.height/2;
-        // let mouse_x = event.clientX;
-        // let mouse_y = event.clientY
 
         let dist = checkDistance(center_x, center_y);
 
@@ -82,8 +71,7 @@ function updateElements(){
             // decrease speed
             element_speeds[i] = slowSpeed(element_speeds[i])
         }
-        let screen_height = document.body.clientHeight
-        let screen_width = document.body.clientWidth
+
         // Checking Edges of Screen
         if (rect.right >= screen_width){
             element_speeds[i].x *= -1;
@@ -109,12 +97,6 @@ function updateElements(){
 
         elements[i].style.top = (rect.top + element_speeds[i].y) + 'px';
         elements[i].style.left = (rect.left + element_speeds[i].x) + 'px';
-        // elements[i].style.left = rect.left + 10 + 'px';
-
-        
-
-        // elements[i].style.top = event.clientY + 'px';
-        // elements[i].style.left = event.clientX + 'px';
         
     }
 }
