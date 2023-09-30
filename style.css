@@ -93,10 +93,23 @@ html {
     height: 100%;
 }
 
+/* @font-face {
+    font-family: "GrandSlang Roman";
+    src: url("assets/fonts/GrandSlang Roman.woff2") format("woff2"),
+} */
+
 body {
     min-height: 100%;
     background-color: #EBE7E2;
-    font-family: "Neue Montreal";
+    /* font-family: "Neue Montreal"; */
+    /* font-family: "Grandslang Roman"; */
+
+    /* font-family: "Lucida Bright"; */
+    /* No */
+    /* font-family: "Monaco"; */
+
+    /* Yes */
+    font-family: 'Courier New', Courier, monospace;
     font-feature-settings: "palt";
     font-weight: 200;
 }
@@ -241,7 +254,7 @@ nav li:hover{
 }
 
 #title span {
-    font-size: 9vw;
+    font-size: 7em;
     /* font-family: "Neue Montreal";
     font-feature-settings: "palt"; */
     font-weight: 200;
@@ -251,11 +264,11 @@ nav li:hover{
 #blurb {
     grid-area: blurb;
     background-color: lightgray;
-    font-size: 2.5vw;
+    font-size: 2em;
     text-align: center;
     justify-self: center;
     align-self: center;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
 #index-wrapper #icons {
@@ -282,7 +295,7 @@ nav li:hover{
     display: grid;
     height: 100%;
     grid-template-columns: 12.5% 25% auto 25% 12.5%;
-    grid-template-rows: 17.5vh 20vh 20vh auto;
+    grid-template-rows: 20vh 18vh 20vh auto;
     grid-template-areas: 
         "nav nav nav nav nav"
         ". title title title ."
@@ -290,27 +303,39 @@ nav li:hover{
         ". icons icons icons .";
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1300px) {
 
-    #blurb, nav a {
-        font-size: 25px;
+    #index-wrapper{
+        grid-template-columns: 5% 5% auto 5% 5%;
+        grid-template-rows: 14vh 25vh 20vh auto;
+        grid-template-areas: 
+            "nav nav nav nav nav"
+            ". title title title ."
+            ". blurb blurb blurb ."
+            ". icons icons icons .";
+    }
+    
+    #blurb {
+        font-size: 1.8em;
+    }
+    nav a {
+        font-size: 1.5em;
     }
 
     #index-wrapper #title {
-        font-size: 90px;
+        font-size: 1em;
     }
 }
 
 @media screen and (max-width: 700px) {
 
     #index-wrapper #title {
-        font-size: 80px;
+        font-size: 0.8em;
     }
 
     #index-wrapper{
-
         grid-template-columns: 5% 5% auto 5% 5%;
-        grid-template-rows: 17.5vh 20vh 20vh auto;
+        grid-template-rows: 14vh 25vh 25vh auto;
         grid-template-areas: 
             "nav nav nav nav nav"
             ". title title title ."
@@ -323,12 +348,12 @@ nav li:hover{
 @media screen and (max-width: 650px) {
 
     #index-wrapper #title {
-        font-size: 70px;
+        font-size: 0.8em;
     }
 
     #index-wrapper{
         grid-template-columns: 5% 90% 5%;
-        grid-template-rows: 17.5vh 20vh 20vh auto;
+        grid-template-rows: 13vh 30vh 30vh auto;
         grid-template-areas: 
             "nav nav nav"
             ". title ."
@@ -336,8 +361,12 @@ nav li:hover{
             ". icons .";
     }
 
-    #blurb, nav a {
-        font-size: 20px;
+    #blurb {
+        font-size: 1.8em;
+    }
+
+    nav a {
+        font-size: 1.2em;
     }
 
 }
@@ -345,7 +374,7 @@ nav li:hover{
 @media screen and (max-width: 330px) {
 
     #index-wrapper #title {
-        font-size: 60px;
+        font-size: 1em;
     }
     #blurb, nav a {
         font-size: 18px;
