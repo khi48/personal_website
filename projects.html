@@ -13,15 +13,12 @@
 <body>
     <div class="noise"></div>
     <template>
-        <li>
+        <li class="project-wrapper">
             <a class="project-link" href="">
-                <div class="project-wrapper">
-                        <img class="display-image" alt="display-image" src="">
-                        <div class="project-information">
-                            <h2 class="project-title"></h2>
-                            <p class="project-description project-text"></p>
-                            <p class="project-tags project-text"></p>
-                        </div>
+                <img class="display-image" alt="display-image" src="">
+                <div class="project-information">
+                    <h2 class="project-title"></h2>
+                    <p class="project-description project-text"></p>
                 </div>
             </a>
         </li>
@@ -39,12 +36,9 @@
       </nav>
 
     <main>
-        <div class="page-wrapper">
-            <nav>
-                <ul id="project-list">
-
-                </ul>
-            </nav>
+        <div id="project-page-wrapper">
+            <ul id="project-list">
+            </ul>
         </div>
     </main>
     
@@ -56,7 +50,7 @@
             
     // checking that the template is viable with the site
     if ('content' in document.createElement('template')) {
-        let projectArray = ["Slime Mold", "topo", "boids", "worley_noise", "noisey_lines", "Hidden Text", "Jake The Dog", "Money Money Money"];
+        let projectArray = ["Slime Mold", "Contour Map", "Boids", "Worley Noise", "Noisy Lines", "Jake The Dog", "Money Money Money", "Hidden Text"];
         
         // finding template 
         let temp = document.getElementsByTagName("template")[0];
@@ -89,7 +83,6 @@
 
             a.querySelector("a").href =  "projects/" + projectArray[i] + "/index.html";
             a.querySelector("img").src =  "projects/" + projectArray[i] + "/reference/display.png";
-            a.querySelector(".project-tags").textContent += "Desktop"
             // projectArray[i] + "/reference/description.html";
 
             // adding child to list to be displayed
