@@ -372,8 +372,20 @@ nav li:hover{
 }
 
 @media screen and (max-width: 500px) {
+
+    #index-wrapper{
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: 13vh 20vh 30vh auto;
+        grid-template-areas: 
+            "nav nav nav"
+            ". title ."
+            ". blurb ."
+            ". icons .";
+    }
+
+
     #index-wrapper #title {
-        font-size: 0.6em;
+        font-size: 0.55em;
     }
 
     #blurb {
@@ -381,7 +393,7 @@ nav li:hover{
     }
 
     nav a {
-        font-size: 1em;
+        font-size: 0.92em;
     }
 }
 /* -------------------------------- Index --------------------------------*/
@@ -472,13 +484,13 @@ nav li:hover{
 
 /* -------------------------------- Resume --------------------------------*/
 #resume-wrapper {
-    width: 65%;
+    width: 60%;
     margin: auto;
 }
 
 #resume-wrapper img {
     margin: auto;
-    max-width:100%;
+    width: 100%;
     height: auto;
     margin-bottom: 5%;
 }
