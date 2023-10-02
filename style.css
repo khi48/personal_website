@@ -264,7 +264,6 @@ nav li:hover{
 
 #blurb {
     grid-area: blurb;
-    background-color: lightgray;
     font-size: 2em;
     text-align: center;
     justify-self: center;
