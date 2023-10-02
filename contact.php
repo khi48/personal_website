@@ -22,14 +22,14 @@ $mail_status = mail($mail_to, $subject, $body_message, $headers);
 
 if ($mail_status) { ?>
 	<script language="javascript" type="text/javascript">
-		alert('Thank you for the message. We will contact you shortly.');
+		alert('Thank you for the message. I will be in contact you shortly.');
 		window.location = 'contact.html';
 	</script>
 <?php
 }
 else { ?>
 	<script language="javascript" type="text/javascript">
-		alert('Message failed. Please, send an email to contact@kieranhitchcock.com');
+		alert('Message failed. Please, send an email directly to contact@kieranhitchcock.com');
 		window.location = 'contact.html';
 	</script>
 <?php
