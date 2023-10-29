@@ -114,6 +114,10 @@ body {
     font-weight: 200;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 nav {
     grid-area: nav;
     display: grid;
