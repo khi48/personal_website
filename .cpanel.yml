@@ -2,4 +2,11 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kieranhi/public_html/
-    - /bin/cp -rf * $DEPLOYPATH
+    - /bin/cp -rf *.html $DEPLOYPATH
+    - /bin/cp -rf *.css $DEPLOYPATH
+    - /bin/cp -rf *.php $DEPLOYPATH
+    - /bin/cp -rf *.js $DEPLOYPATH
+    - /bin/cp -rf addons $DEPLOYPATH
+    - /bin/cp -rf assets $DEPLOYPATH
+    - /bin/cp -rf libs $DEPLOYPATH
+    - /bin/cp -rf projects $DEPLOYPATH
