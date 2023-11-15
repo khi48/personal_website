@@ -93,24 +93,29 @@ html {
     height: 100%;
 }
 
-/* @font-face {
-    font-family: "GrandSlang Roman";
-    src: url("assets/fonts/GrandSlang Roman.woff2") format("woff2"),
-} */
+@font-face {
+    font-family: "Aurora Pro";
+    src: url('assets/fonts/aurora-pro/aurora-pro-webfont.woff2') format('woff2'),
+            url('assets/fonts/aurora-pro/aurora-pro-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Florensa";
+    src: url('assets/fonts/florensa/florensa-demo-webfont.woff2') format('woff2'),
+            url('assets/fonts/florensa/florensa-demo-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: "stretchpro";
+    src: url('assets/fonts/stretchpro/stretchpro-webfont.woff2') format('woff2'),
+            url('assets/fonts/stretchpro/stretchpro-webfont.woff') format('woff');
+}
+    
 
 body {
     min-height: 100%;
     background-color: #EBE7E2;
-    /* font-family: "Neue Montreal"; */
-    /* font-family: "Grandslang Roman"; */
-
-    /* font-family: "Lucida Bright"; */
-    /* No */
-    /* font-family: "Monaco"; */
-
-    /* Yes */
-    font-family: 'Courier New', Courier, monospace;
-    font-feature-settings: "palt";
+    font-family: 'Louis George Café Light', sans-serif;
     font-weight: 200;
 }
 
@@ -119,7 +124,6 @@ body {
 }
 
 nav {
-    grid-area: nav;
     display: grid;
     padding: 2% 12vw;
     height: 100%;
@@ -134,8 +138,9 @@ nav ul {
 }
 
 nav a {
+    font-family: 'Stretch Pro', sans-serif;
     text-decoration: none;
-    font-size: 2vw;
+    font-size: 2.2vw;
 }
 
 nav li:hover{
@@ -155,9 +160,9 @@ nav li:hover{
     left: -150%;
     height: 600%;
     width: 600%;
-    -webkit-animation: grain 7s steps(10) infinite;
-    animation: grain 7s steps(10) infinite;
-    background-image: url(assets/noise.png);
+    -webkit-animation: grain 15s steps(10) infinite;
+    animation: grain 15s steps(10) infinite;
+    background-image: url(assets/ink_blots_dusty_grunge_texture.jpg);
     background-size: 500px;
     background-repeat: repeat;
     opacity: 0.15;
@@ -252,32 +257,34 @@ nav li:hover{
 /* -------------------------------- Index --------------------------------*/
 
 #title { 
+    font-family: 'Stretch Pro', sans-serif;
+    display: grid;
     grid-area: title;
+
     justify-self: center;
     align-self: center;
     text-align: center;
-}
-
-#title span {
-    font-size: 7em;
-    /* font-family: "Neue Montreal";
-    font-feature-settings: "palt"; */
-    font-weight: 200;
-    /* font-family: Sans-Serif; */
+    
+    font-size: 8vw;
 }
 
 #blurb {
+    display: grid;
     grid-area: blurb;
-    font-size: 2em;
+
+    height: 100%;
+
     text-align: center;
     justify-self: center;
     align-self: center;
-    height: 100%;
-    /* font-family: 'Courier New', Courier, monospace; */
+    
+    font-size: 2vw;
+    font-weight: 100;
 }
 
 #index-wrapper #icons {
     grid-area: icons;
+
     margin-left: auto;
     margin-right: auto;
 }
@@ -300,121 +307,46 @@ nav li:hover{
     display: grid;
     height: 100vh;
     min-height: 500px;
-    grid-template-columns: 12.5% 25% auto 25% 12.5%;
-    grid-template-rows: 20% 18% 20% auto;
+    grid-template-columns: 12.5% auto 12.5%;
+    grid-template-rows: 10% 30% 5% 10% 5% auto;
     grid-template-areas: 
-        "nav nav nav nav nav"
-        ". title title title ."
-        ". blurb blurb blurb ."
-        ". icons icons icons .";
+        ". . ."
+        ". title ."
+        ". . ."
+        ". blurb ."
+        ". . ."
+        ". icons .";
 }
 
-@media screen and (max-width: 1300px) {
+
+@media screen and (max-width: 800px) {
 
     #index-wrapper{
-        grid-template-columns: 5% 5% auto 5% 5%;
-        grid-template-rows: 14% 25% 20% auto;
-        grid-template-areas: 
-            "nav nav nav nav nav"
-            ". title title title ."
-            ". blurb blurb blurb ."
-            ". icons icons icons .";
-    }
-    
-    #blurb {
-        font-size: 1.8em;
-    }
-    nav a {
-        font-size: 1.5em;
+        grid-template-columns: 5% auto 5%;
+        grid-template-rows: 10% 20% 5% 10% 10% auto;
     }
 
-    #index-wrapper #title {
+    #title { 
+        font-size: 9vw;
+    }
+
+    #blurb {
         font-size: 1em;
     }
 }
-
-@media screen and (max-width: 700px) {
-
-    #index-wrapper #title {
-        font-size: 0.8em;
-    }
-
-    #index-wrapper{
-        grid-template-columns: 5% 5% auto 5% 5%;
-        grid-template-rows: 14% 25% 25% auto;
-        grid-template-areas: 
-            "nav nav nav nav nav"
-            ". title title title ."
-            ". blurb blurb blurb ."
-            ". icons icons icons .";
-    }
-}
-
-
-@media screen and (max-width: 650px) {
-
-    #index-wrapper #title {
-        font-size: 0.8em;
-    }
-
-    #index-wrapper{
-        grid-template-columns: 5% 90% 5%;
-        grid-template-rows: 13% 30% 30% auto;
-        grid-template-areas: 
-            "nav nav nav"
-            ". title ."
-            ". blurb ."
-            ". icons .";
-    }
-
-    #blurb {
-        font-size: 1.8em;
-    }
-
-    nav a {
-        font-size: 1.2em;
-    }
-
-}
-
-@media screen and (max-width: 500px) {
-
-    #index-wrapper{
-        grid-template-columns: 5% 90% 5%;
-        grid-template-rows: 13% 20% 30% auto;
-        grid-template-areas: 
-            "nav nav nav"
-            ". title ."
-            ". blurb ."
-            ". icons .";
-    }
-
-
-    #index-wrapper #title {
-        font-size: 0.55em;
-    }
-
-    #blurb {
-        font-size: 1.5em;
-    }
-
-    nav a {
-        font-size: 0.92em;
-    }
-}
-/* -------------------------------- Index --------------------------------*/
+/* -------------------------------- xIndexx --------------------------------*/
 
 
 /* -------------------------------- Project --------------------------------*/
 
 #project-page-wrapper {
-    margin: 5% 5%;
+    margin: 5%;
 }
 
 #project-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
     align-content: flex-start;
     row-gap: 2vh;
     column-gap: 2vw;
@@ -422,13 +354,10 @@ nav li:hover{
 
 .project-wrapper {
     display: flex;
-    /* flex-basis: 0; */
     flex: 1 1 0px;
     width: 30vw;
     min-width: -webkit-min-content;
 }
-
-
 
 .project-link {
     display: flex;
@@ -436,13 +365,13 @@ nav li:hover{
 
 .project-link .display-image  {
     margin: 2%;
-    height: 11em;
-    width: 20em;
+    height: 11vw;
+    width: 20vw;
 }
 
 .project-information {
     display: inline;
-    min-width: 200px;
+    min-width: 180px;
 }
 
 
@@ -453,13 +382,11 @@ nav li:hover{
 
 .project-wrapper .project-title {
     grid-area: projectTitle;
-
-    font-size: 35px;
+    font-size: 3vw;
     color: darkorange;
     margin: 2%;
     margin-bottom: 0%;
     height: auto;
-
 }
 
 .project-wrapper .project-description {
@@ -469,23 +396,34 @@ nav li:hover{
 }
 
 .project-wrapper .project-tags {
-    /* order: 3; */
     grid-area: tag;
-    /* justify-self: end; */
     align-self: end;
     margin: 2%;
     margin-bottom: 3.5%;
     color: gray;
-    /* margin-top: 5%; */
-    /* grid-row: ; */
 }
 
 .project-wrapper .project-text {
-    font-size: 19px;
-
+    font-size: 1.8vw;
 }
 
-/* -------------------------------- Project --------------------------------*/
+@media screen and (max-width: 800px) {
+
+    .project-link .display-image  {
+        margin: 2%;
+        height: 15vw;
+        width: 25vw;
+    }
+
+    .project-wrapper .project-title {
+        font-size: 5vw;
+    }
+    .project-wrapper .project-text {
+        font-size: 3vw;
+    }
+}
+
+/* -------------------------------- xProjectx --------------------------------*/
 
 
 /* -------------------------------- Resume --------------------------------*/
@@ -502,18 +440,24 @@ nav li:hover{
 }
 
 #resume-download-text{
-    /* margin: auto; */
     font-size: 25px;
     text-decoration: None;
     border: none;
-
     display: inline-block; 
 }
 
 #resume-download-text:hover {
     transform: scale(1.05);
 }
-/* -------------------------------- Resume --------------------------------*/
+
+
+@media screen and (max-width: 800px) {
+
+    #resume-wrapper {
+        width: 80%;
+    }
+}
+/* -------------------------------- xResumex --------------------------------*/
 
 
 
@@ -624,4 +568,4 @@ nav li:hover{
     font-size: 16px;
 }
 
-/* -------------------------------- Contact --------------------------------*/
+/* -------------------------------- xContactx --------------------------------*/
