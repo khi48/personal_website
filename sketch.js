@@ -8,6 +8,8 @@ let mouse_x = null;
 var mouse_y = null;
 
 document.addEventListener('mousemove', onMouseUpdate);
+window.onload = setup;
+
 
 function onMouseUpdate(e) {
     mouse_x = e.clientX;
@@ -32,7 +34,7 @@ function setup(){
     }
 }
 
-setup()
+
 
 function checkDistance(center_x, center_y){
     return ((mouse_x-center_x)**2 + (mouse_y-center_y)**2)**0.5
