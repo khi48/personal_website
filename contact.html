@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -23,7 +23,7 @@
     <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a  href="projects.html">Projeects</a></li>
+          <li><a href="projects.html">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -39,8 +39,13 @@
         <br>
 
         <div class="contact-form-wrapper">
-            <!-- https://www.templatemonster.com/help/how-create-contact-form-html.html -->
-            <form action="contact.php" method="post">
+            <!--
+              Form posts to Formspree (no backend needed for static hosting).
+              To enable: sign up at https://formspree.io, create a form, paste
+              the endpoint URL in place of YOUR_FORM_ID below. Until then the
+              form will 404 — the social icons below still work as a fallback.
+            -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
                 <div class="contact-form-row">
                     Name:<br>
                     <input type="text" name="cf_name" class="text-input"><br>
@@ -76,3 +81,5 @@
     <footer></footer>
 
 </body>
+
+</html>

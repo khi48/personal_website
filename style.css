@@ -311,7 +311,6 @@ nav li:hover{
 #index-wrapper{
     display: grid;
     height: 100vh;
-    min-height: 500px;
     grid-template-columns: 12.5% auto 12.5%;
     grid-template-rows: 10% 30% 5% 10% 5% auto;
     grid-template-areas: 
