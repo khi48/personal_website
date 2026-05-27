@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+.cpanel.yml
+.cpanel.yaml
+.DS_Store
+README.md
+contact.php
+script.py
+wrangler.jsonc
+.assetsignore
+node_modules
